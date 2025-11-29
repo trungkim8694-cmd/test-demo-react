@@ -1,6 +1,6 @@
 import React from "react";
 import "./DisplayInfo.scss";
-import logo from "./../logo.svg";
+// import logo from "./../logo.svg";
 
 class DisplayInfo extends React.Component {
   state = {
@@ -14,13 +14,13 @@ class DisplayInfo extends React.Component {
 
   render() {
     // destructuring array/ object
-    const { listUsers } = this.props; //tương dudong với const lisUsers = this.props.listUsers;
+    const { listUsers } = this.props; //tương duong với const lisUsers = this.props.listUsers;
     //props => viết tắt của từ property
     // console.log(listUsers);
     // console.table(listUsers);
     return (
       <div className="display-info-container">
-        <img src={logo} />
+        {/* <img src={logo} /> */}
         <div>
           <span
             onClick={() => {
@@ -33,7 +33,7 @@ class DisplayInfo extends React.Component {
           </span>
         </div>
         {this.state.isShowListUser && (
-          <div>
+          <>
             {listUsers.map((user, index) => {
               return (
                 <div
@@ -46,7 +46,7 @@ class DisplayInfo extends React.Component {
                 </div>
               );
             })}
-          </div>
+          </>
         )}
       </div>
     );

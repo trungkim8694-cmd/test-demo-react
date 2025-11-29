@@ -22,12 +22,15 @@ class MyComponent extends React.Component {
   // JSX cú pháp đặc biết react
   render() {
     return (
-      <div>
-        <AddUserInfo handleAddNewUser={this.handleAddNewUser} />
-        <br />
-        <br />
-        <DisplayInfo listUsers={this.state.listUsers} />
-      </div>
+      <>
+        <div className="a">
+          <AddUserInfo handleAddNewUser={this.handleAddNewUser} />
+          <br />
+          <br />
+          <DisplayInfo listUsers={this.state.listUsers} />
+        </div>
+        <div className="b"></div>
+      </>
     );
   }
 }
