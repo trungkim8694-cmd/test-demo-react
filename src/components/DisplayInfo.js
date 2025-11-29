@@ -1,4 +1,5 @@
 import React from "react";
+import "./DisplayInfor.scss";
 
 class DisplayInfo extends React.Component {
   state = {
@@ -14,10 +15,10 @@ class DisplayInfo extends React.Component {
     // destructuring array/ object
     const { listUsers } = this.props; //tương dudong với const lisUsers = this.props.listUsers;
     //props => viết tắt của từ property
-    console.log(listUsers);
+    // console.log(listUsers);
     // console.table(listUsers);
     return (
-      <div>
+      <div className="display-info-container">
         <div>
           <span
             onClick={() => {
