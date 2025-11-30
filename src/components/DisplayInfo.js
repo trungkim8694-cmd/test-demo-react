@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./DisplayInfo.scss";
 // import logo from "./../logo.svg";
 
@@ -6,6 +6,7 @@ import "./DisplayInfo.scss";
 // class DisplayInfo extends React.Component {}
 
 const DisplayInfo = (props) => {
+  const { listUsers } = props;
   const [isShowHideLisUser, setIsShowHideLisUser] = useState(true);
 
   //this.state = {isShowHideListUser: true}
@@ -15,7 +16,15 @@ const DisplayInfo = (props) => {
     setIsShowHideLisUser(!isShowHideLisUser);
   };
 
-  const { listUsers } = props; //tương duong với const lisUsers = props.listUsers;
+  console.log("call me render");
+
+  useEffect(() => {
+    if (listUsers.length === 0) {
+      alert("You delete all users");
+    }
+    console.log("call me useEffect");
+  }, [listUsers]);
+
   return (
     <div className="display-info-container">
       <div>
