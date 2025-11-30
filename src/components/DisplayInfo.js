@@ -18,6 +18,9 @@ class DisplayInfo extends React.Component {
     //props => viết tắt của từ property
     // console.log(listUsers);
     // console.table(listUsers);
+
+    //template + logic js
+
     return (
       <div className="display-info-container">
         {/* <img src={logo} /> */}
@@ -42,6 +45,15 @@ class DisplayInfo extends React.Component {
                 >
                   <div>My name's {user.name}</div>
                   <div>My age's {user.age}</div>
+                  <div>
+                    <button
+                      onClick={() => {
+                        this.props.handleDeleteUser(user.id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
                   <hr />
                 </div>
               );
